@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestalt Numbers | Assessoria Contábil e Gestão Empresarial</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary: #0a2540;
+            --secondary: #c1a35f;
+            --accent: #f6f9fc;
+            --text-dark: #1a1f36;
+            --text-muted: #4f585e;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--text-muted); line-height: 1.6; background: var(--white); }
+
+        /* Navbar */
+        nav { background: var(--primary); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .logo { color: var(--white); font-size: 1.4rem; font-weight: 800; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .logo span { color: var(--secondary); }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: var(--white); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--secondary); }
+
+        /* Hero Section */
+        .hero { padding: 80px 5%; text-align: center; background: linear-gradient(135deg, #0a2540 0%, #1c3d63 100%); color: var(--white); }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1.5rem; line-height: 1.2; }
+        .hero p { font-size: 1.1rem; max-width: 700px; margin: 0 auto 2rem; opacity: 0.9; }
+        .btn-primary { background: var(--secondary); color: var(--primary); padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 700; transition: transform 0.2s; display: inline-block; }
+        .btn-primary:hover { transform: translateY(-2px); }
+
+        /* Services */
+        .services { padding: 60px 5%; background: var(--accent); }
+        .section-title { text-align: center; margin-bottom: 40px; color: var(--text-dark); }
+        .section-title h2 { font-size: 2rem; margin-bottom: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card { background: var(--white); padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: 0.3s; border-top: 4px solid var(--secondary); }
+        .card:hover { transform: translateY(-5px); }
+        .card i { color: var(--secondary); margin-bottom: 15px; }
+        .card h3 { color: var(--text-dark); margin-bottom: 15px; }
+
+        /* About/Trust */
+        .about { padding: 60px 5%; display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+        .about-text { flex: 1; min-width: 300px; }
+        .about-text h2 { color: var(--text-dark); font-size: 2rem; margin-bottom: 20px; }
+        .trust-badge { background: #eef2f7; padding: 15px; border-radius: 8px; display: inline-flex; align-items: center; gap: 10px; font-weight: 600; color: var(--primary); margin-top: 20px; }
+
+        /* Footer */
+        footer { background: #f1f4f8; padding: 40px 5%; border-top: 1px solid #ddd; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 30px; }
+        .footer-col h4 { color: var(--text-dark); margin-bottom: 20px; font-size: 1.1rem; }
+        .footer-col p, .footer-col a { font-size: 0.85rem; color: var(--text-muted); text-decoration: none; display: block; margin-bottom: 10px; }
+        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #ccc; font-size: 0.8rem; color: #888; }
+
+        /* Modals */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center; padding: 20px; }
+        .modal-content { background: var(--white); padding: 40px; border-radius: 12px; max-width: 800px; max-height: 90vh; overflow-y: auto; position: relative; }
+        .close-modal { position: absolute; top: 20px; right: 20px; cursor: pointer; color: var(--text-muted); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="logo">GESTALT <span>NUMBERS</span></a>
+        <div class="nav-links">
+            <a href="#servicos">Serviços</a>
+            <a href="#sobre">Sobre Nós</a>
+            <a href="#contato">Contato</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Gestão Empresarial e Assessoria Contábil de Alta Performance</h1>
+        <p>Há mais de 14 anos transformando a saúde financeira de empresas com precisão técnica e visão estratégica no coração de São Paulo.</p>
+        <a href="#contato" class="btn-primary">Solicitar Consultoria</a>
+    </section>
+
+    <section class="services" id="servicos">
+        <div class="section-title">
+            <h2>Nossas Soluções</h2>
+            <p>Suporte completo para a conformidade e crescimento do seu negócio.</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <i data-lucide="bar-chart-3"></i>
+                <h3>Gestão Financeira</h3>
+                <p>Análise de fluxo de caixa, planejamento orçamentário e controle de custos para maximizar a lucratividade.</p>
+            </div>
+            <div class="card">
+                <i data-lucide="file-text"></i>
+                <h3>Assessoria Contábil</h3>
+                <p>Escrituração fiscal, balanços e conformidade com as normas vigentes para evitar riscos tributários.</p>
+            </div>
+            <div class="card">
+                <i data-lucide="shield-check"></i>
+                <h3>Consultoria Tributária</h3>
+                <p>Planejamento estratégico para redução legal de impostos e otimização da carga tributária empresarial.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="sobre">
+        <div class="about-text">
+            <h2>Tradição e Confiança</h2>
+            <p>A <strong>Gestalt Numbers Assessoria Contabil e Gestao Empresarial LTDA</strong> atua desde 2012, oferecendo soluções robustas para micro e pequenas empresas. Nossa missão é simplificar a burocracia para que o empreendedor foque no que realmente importa: o crescimento do seu negócio.</p>
+            <div class="trust-badge">
+                <i data-lucide="award"></i>
+                14 Anos de Experiência Comprovada
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Sobre a Empresa</h4>
+                <p>Gestalt Numbers Assessoria Contabil e Gestao Empresarial LTDA</p>
+                <p>CNPJ: 15.148.410/0001-51</p>
+            </div>
+            <div class="footer-col">
+                <h4>Localização</h4>
+                <p>Avenida Paulista, 2006<br>Andar 13 Conj 1315<br>Bela Vista, São Paulo - SP<br>CEP: 01310-200</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <p>E-mail: societario@ismcorp.com.br</p>
+                <p>Tel: (11) 2338-2481 / 2482</p>
+            </div>
+            <div class="footer-col">
+                <h4>Jurídico</h4>
+                <a href="javascript:void(0)" onclick="openModal('pp')">Política de Privacidade</a>
+                <a href="javascript:void(0)" onclick="openModal('tc')">Termos de Uso</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Gestalt Numbers Assessoria Contábil. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <!-- Modal Política de Privacidade -->
+    <div id="modal-pp" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('pp')"><i data-lucide="x"></i></span>
+            <h2 style="color: var(--primary); margin-bottom: 20px;">Política de Privacidade</h2>
+            <p>A Gestalt Numbers valoriza a privacidade de seus clientes. Coletamos apenas dados necessários para a prestação de serviços contábeis e gestão empresarial, conforme a LGPD (Lei Geral de Proteção de Dados).</p>
+            <br>
+            <p><strong>Coleta de Dados:</strong> Coletamos nome, e-mail e telefone apenas para fins de contato e consultoria.</p>
+            <br>
+            <p><strong>Uso de Informações:</strong> Seus dados não são compartilhados com terceiros sem autorização prévia, exceto para cumprimento de obrigações legais junto aos órgãos governamentais.</p>
+            <br>
+            <p><strong>Segurança:</strong> Utilizamos protocolos de segurança para garantir que as informações financeiras e fiscais de nossos clientes estejam protegidas.</p>
+        </div>
+    </div>
+
+    <!-- Modal Termos de Uso -->
+    <div id="modal-tc" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('tc')"><i data-lucide="x"></i></span>
+            <h2 style="color: var(--primary); margin-bottom: 20px;">Termos de Uso</h2>
+            <p>Ao acessar este site, você concorda com os termos de uso da Gestalt Numbers Assessoria Contábil.</p>
+            <br>
+            <p><strong>Serviços:</strong> As informações contidas neste site são para fins informativos. A contratação de serviços de assessoria depende de análise prévia e contrato assinado.</p>
+            <br>
+            <p><strong>Responsabilidade:</strong> Não nos responsabilizamos por interpretações equivocadas de leis tributárias sem a devida consultoria técnica de nossos especialistas.</p>
+            <br>
+            <p><strong>Propriedade Intelectual:</strong> Todo o conteúdo deste site é de propriedade da Gestalt Numbers Assessoria Contabil e Gestao Empresarial LTDA.</p>
+        </div>
+    </div>
+
+    <script>
+        // Inicializa ícones Lucide
+        lucide.createIcons();
+
+        function openModal(id) {
+            document.getElementById('modal-' + id).style.display = 'flex';
+        }
+
+        function closeModal(id) {
+            document.getElementById('modal-' + id).style.display = 'none';
+        }
+
+        // Fecha modal ao clicar fora do conteúdo
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
